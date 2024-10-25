@@ -1,4 +1,4 @@
-![comments](./0_for_co-authors/comments.jpg)
+![comments](./comments.jpg)
 
 - Log in through your overleaf account
 - enter a project
