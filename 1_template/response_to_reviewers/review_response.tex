@@ -1,0 +1,135 @@
+\documentclass[12pt,american]{scrartcl}
+\usepackage{babel}
+\usepackage[babel]{microtype}
+\usepackage[babel]{csquotes}
+
+\usepackage[journal={Journal of Advances in Modeling Earth Systems},
+			manuscript={2024MS004380},
+			editor={Dr. Jiwen Fan}]{reviewresponse}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage{newcent}
+%\usepackage[scaled]{beramono}
+
+\usepackage[backend=biber,style=ieee,dashed=false,url=false,isbn=false,defernumbers=true,refsection=section]{biblatex}
+\bibliography{literature}
+
+\usepackage{hyperref}
+
+\title{Improving Urban Climate Adaptation Modelling in the Community Earth System Model (CESM) Through Transient Urban Surface Albedo Representation}
+\author{Yuan Sun, Bowen Fang, Keith W. Oleson, Lei Zhao, David O. Topping, David M. Schultz, and Zhonghua Zheng}
+
+
+\begin{document}
+\maketitle
+
+% Cover Letter
+\input{cover_letter.tex}
+
+% Table of Contents
+\clearpage
+\tableofcontents
+
+% Response to Editor
+\editor
+\begin{generalcomment}
+	I have received 3 reviews of your manuscript, which are included below and/or attached. As you can see, the reviews indicate that major revisions are needed before we can consider proceeding with your paper. I am therefore returning the paper to you so that you can make the necessary changes.
+\end{generalcomment}
+\begin{revresponse}[We appreciate your handling of the review process.]
+	According to the reviewers' comments, we have checked our manuscript and addressed them in the following way:
+	\begin{enumerate}
+		\item We added content.
+		\item We removed our wrong statements in Section~I.
+	\end{enumerate}
+\end{revresponse}
+
+% Reviewer #1
+% \clearpage
+\reviewer
+\begin{generalcomment}
+	In this paper, the authors developed a method to incorporate the albedo change in CESM model and demonstrated its applications by making gradual change (+0.01 per year) in urban surface albedos under SSP3 till 2099. Including the gradual changes of parameters in ESM will make the simulation more realistic. The author also mentioned this method can be applied to the other urban parameters other than albedo. The paper is generally well-written, with rich text describing the technical approach, detailed appendices illustrating necessary information to replicate their methods and simulations. To this end, it fits the "model development" theme of JAMES well. Nonetheless, I do have a few questions on the overall concepts (or their different functionalities) of "Earth system modeling" and "urban canopy modeling" that I would like the authors to answer in their article. How the authors comprehend these questions, for sure, will not affect the overall quality and the bottom line of this paper. But the discussion can be beneficial for the urban climate research community.
+\end{generalcomment}
+\begin{revresponse}[Thank you for your feedback.]
+	We have carefully addressed all the issues item by item as follows.
+\end{revresponse}
+
+\begin{revcomment}
+	From my understanding, the main purposes of incorporating urban-resolving schemes into ESM is (a) to investigate climate change impacts on urban environments; and (b) to explore mitigation strategies from urban areas that can counteract the climate change. The existing studies have demonstrated that the impacts in (a) can be substantial, while effect of (b) is rather subtle or very localized. In the simulations presented in this paper, we can also see changing urban parameters lowers urban heat only at local scale. This is perhaps due to the very limited footprint of the urbanized areas (~3\% of global land), or the coarse spatial resolution of CESM, or other reasons. But regardless of the exact reasons, it seems the interactions between "changing urban parameters" and "the projected future climate" is rather one-way, i.e., changing urban parameters will create localized effect, but will not alter the future climate over the other non-urban ecosystems. In this case, these localized impacts can be better (or more accurately) quantified by regional-scale, or city-scale models with higher resolution, more detailed urban parameterization, more urban processes, etc. One may argue that lower urban temperature will lower carbon emissions caused by summer cooling, then change the atmospheric radiative forcings and affect the global climate. But this has not been evaluated, at least not been evaluated in this paper. Even if it is evaluated, I will doubt the impact from changing albedos will be much less prominent than other carbon reduction actions (e.g., EV and renewable adoption, urban afforestation, etc). Given this one-way connection, why do we still need to incorporate "gradual change of urban parameter (without considering the change of radiative forcing by atmospheric carbon)" in ESM?
+\end{revcomment}
+\begin{revresponse}
+	We agree that the title is somewhat misleading.
+	We therefore changed it in the current version of the manuscript.
+\end{revresponse}
+
+\begin{revcomment}
+	Urban-scale processes will be very hard to reflect with the coarse resolution, as the urban signal can be damped by the surrounding natural landscapes by averaging. This effect may not be significant for densely and widely urbanized regions such as city clusters in Europe and East Asia, but can be problematic for US cities. In an unlikely case, a city can be in the center of four grid cells. The result can be very different from the case when the city is completely within one grid cell. I would recommend the authors to include a discussion on the uncertainties led by model resolution and configuration. The current discussion said "further examination ... should be achieved ... with finer resolution", but it will be better if the authors can elaborate more on why a higher resolution is desired/required.
+\end{revcomment}
+\begin{revresponse}
+	We totally agree. We also added the following to the new version of the manuscript
+	\begin{changes}
+		This really important sentence was added to the paper.
+	\end{changes}
+\end{revresponse}
+
+\begin{revcomment}
+	I don't think it's necessary to emphasize "...for non-policy applications..." in the abstract.
+\end{revcomment}
+\begin{revresponse}
+	We totally agree. We also added the following to the new version of the manuscript
+	\begin{changes}
+		This really important sentence was added to the paper.
+	\end{changes}
+\end{revresponse}
+
+% Reviewer #2
+% \clearpage
+\reviewer
+\begin{generalcomment}
+This manuscript by Sun et al. introduces a new scheme in CESM to simulate urban albedo impacts on urban thermal environments, energy consumption at a large scale during 2015-2099. Specifically, the authors use different urban albedo configurations, i.e. albedo with static and increasing annually by a fixed rate, as well as in different urban surfaces (roof, wall, and road) and urban land units (TBD, HD, and MD) to quantify patterns of urban heat island, heat stress, urban energy changes in different seasons at a global scale. Findings of this manuscript highlight the importance of targeted interventions on urban areas in mitigate urban heat island. This manuscript is well-written and well-organized overall, the experiment for simulation is detailed designed, and the scope of this manuscript fits well with the Journal of Advances in Modeling Earth Systems, I would recommend this manuscript be accepted with minor revision.
+\end{generalcomment}
+\begin{revresponse}[Thank you for your feedback.]
+	We have carefully addressed all the issues item by item as follows.
+\end{revresponse}
+
+\begin{revcomment}\label{comment:work-not-good}
+L371-L399: section 3.2 aims to explore the energy response to roof albedo, but the authors put most of efforts on the long-term trend change (which is a bit unnecessary as the atmospheric forcing such as FSDS show the similar pattern in the long-term run), rather than on the intercomparison among different albedo configurations, which is the focus on this part. I believe readers are more interested in changes among those configurations. For instance, it will be interesting to see contributions of high albedo on AC flux change, or the amount of reduction on urban absorbed solar radiation FSA due to high albedo roof, as well as the HEAT/AHF increase accordingly.
+\end{revcomment}
+\begin{revresponse}
+	:(
+\end{revresponse}
+
+\begin{revcomment}
+	You forgot to cite a very important reference (where I am an author)!
+\end{revcomment}
+\begin{revresponse}
+	We are aware that citations on Google Scholar are very important to you.
+	Therefore, we added reference \cite{ReviewerReference}.
+	
+	Also check out our article \cite{Besser2020}.
+	
+	\printpartbibliography{ReviewerReference,Besser2020}
+	
+	And btw, your Comment~\ref{comment:work-not-good} was mean!
+\end{revresponse}
+
+% Reviewer #3
+% \clearpage
+\reviewer
+\begin{revcomment}
+	Did you know, that the references can be separated for the individual reviewers?
+\end{revcomment}
+\begin{revresponse}
+	Yes. When using \href{https://www.ctan.org/pkg/biblatex}{biblatex}, you can use the \texttt{refsection=section} option to achieve that.
+	If we cite a new reference like \cite{Besser2021} here, it will again be number [1].
+	
+	Note that you might have to run \texttt{pdflatex} and \texttt{biber} multiple times.
+	
+	And reference [1] for Reviewer 2~\cite{ReviewerReference} is now number [2].
+	
+\printpartbibliography{Besser2021,ReviewerReference}
+\end{revresponse}
+
+
+
+\end{document}
