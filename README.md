@@ -3,7 +3,7 @@
 - This repo is used for Latex and Overleaf.
 
 - [latex_notes](./latex_notes.md)
-- [overleaf_notes][./overleaf_notes.md]
+- [overleaf_notes](./overleaf_notes.md)
 
 
 
