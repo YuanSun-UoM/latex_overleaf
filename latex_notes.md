@@ -195,23 +195,6 @@ https://tablesgenerator.com/ # 辅助生成表格代码
 
 
 
-### 参考文献
-
-- latex中的参考文献使用bibtex
-
-#### 在文中
-
-- 调整参考文献的顺序：在begin ducument之前写入
-
-````
-\usepackage[sort&compress]{natbib}
-\bibliographystyle{unsrt}
-````
-
-#### 在文末
-
-
-
 ## 图片
 
 - 统一设置图片路径
@@ -254,7 +237,97 @@ https://tablesgenerator.com/ # 辅助生成表格代码
 # overleaf & vscode
 
 - 安装Overleaf Workshop 插件
+
+# 参考文献
+
+- latex中的参考文献一般使用bibtex
+- Bibtex style 有 [harvard](https://www.ctan.org/tex-archive/macros/latex/contrib/harvard/), [iopart-num](https://ctan.org/pkg/iopart-num). 
+
+## 在文中
+
+- 调整参考文献的顺序：在begin ducument之前写入
+
+````
+\usepackage[sort&compress]{natbib}
+````
+
+## 在文末
+
 - 
+
+```
+\bibliographystyle{xxx.bst}
+```
+
+## Journal requirement
+
+### Wiley AGU journal
+
+### IOP
+
+- IOP的模板没有提供可用的bst文件，需要自行下载
+
+```
+\item For the numerical (Vancouver) reference style we recommend that authors use 
+ \verb"unsrt.bst"; this does not quite follow the style of published articles in our
+ journals but this is not a problem.  Alternatively \verb"iopart-num.bst" created by Mark A Caprio
+ produces a reference style that closely matches that in published articles.  The file is available from
+\verb"http://ctan.org/tex-archive/biblio/bibtex/contrib/iopart-num/" .
+\item For alphabetical (Harvard) style references we recommend that authors use the \verb"harvard.sty"
+in conjunction with the \verb"jphysicsB.bst" BibTeX style file.  These, and accompanying documentation, can be downloaded
+from \penalty-10000 \verb"http://www.ctan.org/tex-archive/macros/latex/contrib/harvard/".
+Note that the \verb"jphysicsB.bst" bibliography style does not include article titles
+in references to journal articles.
+To include the titles of journal articles you can use the style \verb"dcu.bst" which is included
+in the \verb"harvard.sty" package.  The output differs a little from the final journal reference
+style, but all of the necessary information is present and the reference list will be formatted
+into journal house style as part of the production process if your article is accepted for publication.
+```
+
+- \bibliographystyle{unsrt}
+- \bibliographystyle{iopart-num}
+- \bibliographystyle{jphysicsB}
+- \bibliographystyle{dcu}
+
+### Elsevier
+
+- Elsevier的模板提供了三种：
+
+  - Elsarticle-template-num.tex
+
+  ```
+  \documentclass[preprint,12pt]{elsarticle}
+  \bibliographystyle{elsarticle-num}
+  # 对应模板提供的elsarticle-num.bst文件
+  ```
+
+  
+
+  - Elsarticle-template-num-names.tex
+
+  ```
+  \documentclass[preprint,12pt]{elsarticle}
+  \bibliographystyle{elsarticle-num-names}
+  # 对应模板提供的elsarticle-num-names.bst文件
+  ```
+
+  
+
+  - Elsarticle-template-harv.tex
+
+  ```
+  \documentclass[preprint,12pt,authoryear]{elsarticle}
+  \bibliographystyle{elsarticle-harv}
+  # 对应模板提供的elsarticle-harv.bst文件
+  ```
+
+
+# Package
+
+## [tcolorbox](https://github.com/T-F-S/tcolorbox)
+
+- use color stack
+  - 换页后字体颜色与上一页保持一致 [ref](https://github.com/T-F-S/tcolorbox/issues/202)
 
 # Error
 
